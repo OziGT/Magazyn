@@ -1,0 +1,41 @@
+<Window x:Class="magazyn.EditStanMagazynowyWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Edytuj pozycję" Height="260" Width="400"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="90"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Produkt:" VerticalAlignment="Center" Margin="0,0,0,10"/>
+        <ComboBox x:Name="ProduktComboBox" Grid.Row="0" Grid.Column="1"
+                  DisplayMemberPath="nazwa" SelectedValuePath="id_produktu"
+                  IsEditable="True" Margin="0,0,0,10"/>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Cena:" VerticalAlignment="Center" Margin="0,0,0,10"/>
+        <TextBox x:Name="CenaTextBox" Grid.Row="1" Grid.Column="1" Margin="0,0,0,10"/>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Magazyn:" VerticalAlignment="Center" Margin="0,0,0,10"/>
+        <ComboBox x:Name="MagazynComboBox" Grid.Row="2" Grid.Column="1"
+                  DisplayMemberPath="nazwa" SelectedValuePath="id_magazynu" Margin="0,0,0,10"/>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Ilość:" VerticalAlignment="Center" Margin="0,0,0,10"/>
+        <TextBox x:Name="IloscTextBox" Grid.Row="3" Grid.Column="1" Margin="0,0,0,10"/>
+
+        <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
+                    Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Zapisz" Width="90" Margin="0,0,10,0" Click="ZapiszButton_Click"/>
+            <Button Content="Anuluj" Width="90" IsCancel="True"/>
+        </StackPanel>
+    </Grid>
+</Window>
